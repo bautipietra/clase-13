@@ -1,0 +1,124 @@
+*, *::after, *::before  {
+    box-sizing: border-box;
+}
+
+html { /* 1rem = 10 px */
+    font-size: 62.5%;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100%;
+    background: #222;
+}
+
+body.darkmode {
+    background-color: #ccc;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.calculadora {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    padding: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #C7FCEC;
+    border: #00C9A7 solid 2px;
+    border-radius: 10px;
+    color: #fff;
+    filter: invert(0);
+    transition: ease-in-out 0.3s;
+}
+
+.calculadoraBotones {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
+    height: 100%;
+}
+
+input, button {
+    border: 2px solid #00C9A7;
+    cursor: pointer;
+    background-color: #C4FCEF;
+    padding: 30px;
+    color: #00C9A7;
+    margin: 10px;
+    border-radius: 10px;
+    transition: ease-in-out 0.2s;
+    font-size: 3rem;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+.botonCalculadora:hover {
+    background-color: #00C9A7;
+    color: #fff;
+}
+
+#result {
+    outline: none;
+    cursor: text;
+    background-color: #00C9A7;
+    color: #fff;
+}
+
+.options {
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+    width: 100%;
+    top: 90%;
+    justify-content: center;
+    align-content: flex-end;
+}
+
+.options div, .options img {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #00C9A7;
+    margin: auto 20px;
+}
+
+.options img {
+    background-color: transparent;
+}
+
+.options div:first-child {
+    filter: invert(100%);
+}
+
+@media screen and (max-width: 800px){
+    .calculadora {
+        padding: 0;
+        position: unset;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+        min-height: 100vh;
+    }
+    input {
+        font-size: 1.6rem;
+    }
+    .botonCalculadora {
+        padding: 10px;
+    }
+}
