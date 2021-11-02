@@ -108,12 +108,13 @@ input::placeholder {
 
 @media screen and (max-width: 800px){
     .calculadora {
+        margin: 30px;
         padding: 0;
         position: unset;
         top: 0;
         left: 0;
         transform: translate(0%, 0%);
-        min-height: 100vh;
+        min-height: calc(100vh - 60px);
     }
     input {
         font-size: 1.6rem;
